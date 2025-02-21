@@ -4,6 +4,5 @@ def fibonacci (num) :
         return num
     else :
         return fibonacci(num - 1) + fibonacci (num - 2) 
-  
 # Example
 print(fibonacci(10))
