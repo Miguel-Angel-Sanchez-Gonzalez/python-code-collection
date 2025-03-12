@@ -102,7 +102,12 @@ def is_blackjack(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    pass
+    face_cards = {'J', 'Q', 'K', '10'}
+    ace_card = 'A'
+
+    hand = {card_one, card_two}
+
+    return ace_card in hand and any(card in face_cards for card in hand)
 
 
 def can_split_pairs(card_one, card_two):
@@ -123,3 +128,9 @@ def can_double_down(card_one, card_two):
     """
 
     pass
+
+
+is_blackjack('A', 'K') #true
+is_blackjack('10', '9') #false
+is_blackjack('4', '7') #false
+is_blackjack('Q', 'K') #false
