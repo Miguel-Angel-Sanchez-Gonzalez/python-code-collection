@@ -117,7 +117,23 @@ def can_split_pairs(card_one, card_two):
     :return: bool - can the hand be split into two pairs? (i.e. cards are of the same value).
     """
 
-    pass
+    
+    def value_of_cards(card_temp):
+        if card_temp in {'J','Q', 'K'}:
+            return 10
+        else :
+            return card_temp
+        
+    card_one = value_of_cards(card_one)
+    card_two = value_of_cards(card_two)
+    
+    if card_one == card_two : 
+        return True
+    else: 
+        return False
+
+        
+    
 
 
 def can_double_down(card_one, card_two):
@@ -129,8 +145,4 @@ def can_double_down(card_one, card_two):
 
     pass
 
-
-is_blackjack('A', 'K') #true
-is_blackjack('10', '9') #false
-is_blackjack('4', '7') #false
-is_blackjack('Q', 'K') #false
+can_split_pairs('10','A')
