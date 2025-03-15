@@ -117,7 +117,6 @@ def can_split_pairs(card_one, card_two):
     :return: bool - can the hand be split into two pairs? (i.e. cards are of the same value).
     """
 
-    
     def value_of_cards(card_temp):
         if card_temp in {'J','Q', 'K'}:
             return 10
@@ -125,9 +124,6 @@ def can_split_pairs(card_one, card_two):
             return card_temp
         
     return value_of_card(card_one) == value_of_card(card_two)
-
-        
-    
 
 
 def can_double_down(card_one, card_two):
@@ -137,6 +133,13 @@ def can_double_down(card_one, card_two):
     :return: bool - can the hand can be doubled down? (i.e. totals 9, 10 or 11 points).
     """
 
-    pass
+    def valor_carta(card):
+        if card in {'J', 'Q', 'K'}:
+            return 10
+        elif card == 'A':  
+            return 1  
+        return int(card) 
 
-can_split_pairs('10','A')
+    total = valor_carta(card_one) + valor_carta(card_two)
+
+    return 9 <= total <= 11
