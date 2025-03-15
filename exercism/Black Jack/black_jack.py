@@ -124,13 +124,7 @@ def can_split_pairs(card_one, card_two):
         else :
             return card_temp
         
-    card_one = value_of_cards(card_one)
-    card_two = value_of_cards(card_two)
-    
-    if card_one == card_two : 
-        return True
-    else: 
-        return False
+    return value_of_card(card_one) == value_of_card(card_two)
 
         
     
