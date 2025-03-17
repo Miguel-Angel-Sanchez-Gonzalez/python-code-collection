@@ -49,3 +49,26 @@ def remove_suffix_ness(word):
       return clear_word[:-1] + "y"
 
     return clear_word
+  
+  
+
+def adjective_to_verb(sentence, index):
+    """Change the adjective within the sentence to a verb.
+
+    :param sentence: str - that uses the word in sentence.
+    :param index: int - index of the word to remove and transform.
+    :return: str - word that changes the extracted adjective to a verb.
+
+    For example, ("It got dark as the sun set.", 2) becomes "darken".
+    """
+
+    split_sentence = sentence.split()  
+    word = split_sentence[index]
+    
+    if word[-1] == '.' : 
+      word = word[:-1]
+    
+    return word + "en"
+
+print(adjective_to_verb('I need to make that bright.', -1 ))
+print(adjective_to_verb('It got dark as the sun set.', 2))
