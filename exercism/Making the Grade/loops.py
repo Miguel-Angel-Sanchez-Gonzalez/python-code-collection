@@ -54,8 +54,26 @@ def letter_grades(highest):
     list_grades.sort()
     return list_grades
 
-print(letter_grades(100)) #deci
-print(letter_grades(97)) #int
-print(letter_grades(85)) #int
-print(letter_grades(92)) #deci
-print(letter_grades(81)) #int
+# Test cases
+# print(letter_grades(100)) #deci
+# print(letter_grades(97)) #int
+# print(letter_grades(85)) #int
+# print(letter_grades(92)) #deci
+# print(letter_grades(81)) #int
+
+
+def student_ranking(student_scores, student_names):
+    
+    list_ranking = []
+
+    for index, (i, j) in enumerate(zip(student_scores, student_names)):
+        table = f"{index + 1}. {j}: {i}"
+        print(table)
+        list_ranking.append(table)
+        
+    return list_ranking
+    
+student_scores = [100, 99, 90, 84, 66, 53, 47]
+student_names =  ['Joci', 'Sara','Kora','Jan','John','Bern', 'Fred']
+
+print(student_ranking(student_scores, student_names))
