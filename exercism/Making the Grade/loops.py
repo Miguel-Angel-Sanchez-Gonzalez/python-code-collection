@@ -72,8 +72,18 @@ def student_ranking(student_scores, student_names):
         list_ranking.append(table)
         
     return list_ranking
-    
-student_scores = [100, 99, 90, 84, 66, 53, 47]
-student_names =  ['Joci', 'Sara','Kora','Jan','John','Bern', 'Fred']
 
-print(student_ranking(student_scores, student_names))
+# Test cases
+# student_scores = [100, 99, 90, 84, 66, 53, 47]
+# student_names =  ['Joci', 'Sara','Kora','Jan','John','Bern', 'Fred']
+
+# print(student_ranking(student_scores, student_names))
+
+def perfect_score(student_info):
+    for i in student_info:
+        if 100 in i :
+            return i
+    
+    return []
+
+perfect_score(student_info=[["Charles", 90], ["Tony", 80], ["Alex", 100]])
